@@ -1,0 +1,15 @@
+rootProject.name = 'multi'
+
+def rootPath = rootDir.toPath().resolve("../")
+
+include 'ulid-module'
+println("ulid-module path: ${rootPath.resolve("ulid-module")}")
+project(':ulid-module').projectDir = file(rootPath.resolve("ulid-module"))
+
+include 'outbox-module'
+println("outbox-module path: ${rootPath.resolve("outbox-module")}")
+project(':outbox-module').projectDir = file(rootPath.resolve("outbox-module"))
+
+include 'user-service'
+println("user-service path: ${rootPath.resolve("user-service")}")
+project(':user-service').projectDir = file(rootPath.resolve("user-service"))
